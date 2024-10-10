@@ -9,8 +9,7 @@ vim.opt.wrap = false
 
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.signcolumn = "yes"
---vim.opt.signcolumn = "number"
+vim.opt.signcolumn = "number"
 vim.opt.scrolloff = 8
 
 vim.opt.swapfile = false
