@@ -53,10 +53,22 @@ local function split_nav(resize_or_move, key)
 end
 
 -- Set `ctrl+s` as the leader key
-config.leader = { key = "s", mods = "CTRL" }
+config.leader = { key = "s", mods = "CTRL", timeout_milliseconds = 1000 }
 
 -- Keybinds
 config.keys = {
+	-- Disable default
+	{
+		key = "m",
+		mods = "CMD",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+	{
+		key = "z",
+		mods = "SHIFT|CTRL",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
+
 	-- Create panes
 	{
 		key = [[-]],
@@ -67,6 +79,18 @@ config.keys = {
 		key = [[|]],
 		mods = "LEADER",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	-- Toggle pane zoom
+	{
+		key = "m",
+		mods = "LEADER",
+		action = wezterm.action.TogglePaneZoomState,
+	},
+	-- Tabs
+	{
+		key = "t",
+		mods = "CTRL",
+		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
 
 	-- Move between split panes
