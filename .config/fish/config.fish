@@ -12,5 +12,5 @@ if status is-interactive
 
     # Go envs
     set -Ux GOPATH $HOME/go
-    set -Ux GOPATH $GOPATH/bin
+    set -Ux GOPBIN $GOPATH/bin
 end
