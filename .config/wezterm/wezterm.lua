@@ -68,17 +68,37 @@ config.keys = {
 		mods = "SHIFT|CTRL",
 		action = wezterm.action.DisableDefaultAssignment,
 	},
-
 	-- Create panes
 	{
-		key = [[-]],
+		key = "-",
 		mods = "LEADER",
 		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
-		key = [[|]],
+		key = "\\",
 		mods = "LEADER",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	-- Adjust pane size
+	{
+		key = "h",
+		mods = "SHIFT|CTRL",
+		action = wezterm.action.AdjustPaneSize({ "Left", 5 }),
+	},
+	{
+		key = "j",
+		mods = "SHIFT|CTRL",
+		action = wezterm.action.AdjustPaneSize({ "Down", 5 }),
+	},
+	{
+		key = "k",
+		mods = "SHIFT|CTRL",
+		action = wezterm.action.AdjustPaneSize({ "Up", 5 }),
+	},
+	{
+		key = "l",
+		mods = "SHIFT|CTRL",
+		action = wezterm.action.AdjustPaneSize({ "Right", 5 }),
 	},
 	-- Toggle pane zoom
 	{
