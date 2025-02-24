@@ -1,4 +1,4 @@
-function gitplf --wraps='git pull origin main -f' --description 'alias gitplf=git pull origin main -f'
-  git pull origin main -f $argv
+function gitplf --wraps='git pull origin -f' --description 'alias gitplf=git pull origin -f'
+  git pull origin -f $argv
         
 end

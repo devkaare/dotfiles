@@ -1,4 +1,4 @@
-function gitp --wraps='git push -u origin main' --description 'alias gitp=git push -u origin main'
-  git push -u origin main $argv
+function gitp --wraps='git push' --description 'alias gitp=git push'
+  git push $argv
         
 end

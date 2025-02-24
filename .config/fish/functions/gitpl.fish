@@ -1,4 +1,4 @@
-function gitpl --wraps='git pull origin main' --description 'alias gitpl=git pull origin main'
-  git pull origin main $argv
+function gitpl --wraps='git pull origin' --description 'alias gitpl=git pull origin'
+  git pull origin $argv
         
 end
