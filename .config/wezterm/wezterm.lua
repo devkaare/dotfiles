@@ -17,6 +17,17 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.8
 -- NOTE: See see https://github.com/wez/wezterm/issues/5263
 config.enable_wayland = false
+config.skip_close_confirmation_for_processes_named = {
+	"bash",
+	"sh",
+	"zsh",
+	"fish",
+	"tmux",
+	"nu",
+	"cmd.exe",
+	"pwsh.exe",
+	"powershell.exe",
+}
 
 -- Smart splits
 local function is_vim(pane)
@@ -124,5 +135,8 @@ config.keys = {
 	split_nav("resize", "k"),
 	split_nav("resize", "l"),
 }
+wezterm.on("mux-is-process-stateful", function(_proc)
+	return false
+end)
 
 return config
