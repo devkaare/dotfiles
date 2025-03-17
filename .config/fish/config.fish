@@ -5,12 +5,16 @@ if status is-interactive
     # Bind keys
     #bind \cR redo
 
-    # Set paths
-
     # Disable greeting
     set fish_greeting
+
+    # Set paths
 
     # Go envs
     set -Ux GOPATH $HOME/go
     set -Ux GOPBIN $GOPATH/bin
+
+    # Remap
+    set -x MANPAGER "nvim +Man!"
+
 end
